@@ -1,0 +1,56 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+    src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+    src: url("../../assets/fonts/alternative_files/AvenirNextLTProDemi.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+    src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Avenir";
+}
+
+.btn {
+
+    @include mobile-labels-buttons;
+    background-image: url("../../assets/images/icons/upload.svg");
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-color: $primary-color-2;
+    color: $primary-color-4;
+    border-radius: .3125rem;
+    border: none;
+    font-weight: 600;
+    min-width: 150px;
+    width: 100%;
+    height: 40px;
+    margin: $mobile-spacing-between-components 0;
+    
+    @include tablet {
+        @include labels-buttons;
+        font-weight: 600;
+        width: 150px;
+    }
+}
