@@ -26,4 +26,8 @@
         position: absolute;
         left: .625rem;
     }
+
+    &:hover {
+        background-color: $secondary-color-2;
+    }
 }

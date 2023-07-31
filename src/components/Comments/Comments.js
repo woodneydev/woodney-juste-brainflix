@@ -11,12 +11,12 @@ const Comments = ({ comments }) => {
         <div class="comment__img"></div>
         <div class="comment__details">
           <div class="comment__details-header">
-            <span class="comment__section-header-name">{comment.name}</span>
-            <span class="comment__section-header-date">
+            <p class="comment__details-header-name">{comment.name}</p>
+            <p class="comment__details-header-date">
               {comment.timestamp}
-            </span>
+            </p>
           </div>
-          <p>{comment.comment}</p>
+          <p class="comment__details-post">{comment.comment}</p>
         </div>
       </div>
     );
@@ -30,7 +30,7 @@ const Comments = ({ comments }) => {
         <form className="add-comments__form">
           <h2 className="add-comments__form-title">JOIN THE CONVERSATION</h2>
           <textarea className="add-comments__form-textarea" placeholder="Add a new comment"></textarea>
-          <Button text={"Comment"} action={addCommentIcon} />
+          <Button text={"COMMENT"} action={addCommentIcon} />
         </form>
       </div>
       {elements}

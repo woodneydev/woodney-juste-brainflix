@@ -1,0 +1,44 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video {
+
+    &__current {
+        @include desktop {
+            display: flex;
+        }
+        
+        &-details {
+            margin-left: $mobile-spacing-between-components;
+            margin-right: $mobile-spacing-between-components;
+
+            @include tablet {
+                margin-left: $spacing-between-components;
+                margin-right: $spacing-between-components;
+            }
+        }
+
+        &-comments {
+            margin-left: $mobile-spacing-between-components;
+            margin-right: $mobile-spacing-between-components;
+
+            @include tablet {
+                margin-left: $spacing-between-components;
+                margin-right: $spacing-between-components;
+            }
+        }
+    }
+
+    &__next-videos {
+        margin-left: $mobile-spacing-between-components;
+        margin-right: $mobile-spacing-between-components;
+
+        @include tablet {
+            margin-left: $spacing-between-components;
+            margin-right: $spacing-between-components;
+        }
+    }
+    
+}
+
+

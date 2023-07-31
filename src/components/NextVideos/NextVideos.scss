@@ -1,13 +1,43 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .next-video {
+    display: flex;
+    margin-bottom: $mobile-spacing-between-components;
+
+
     &__img {
+        flex: 1;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        border-radius: .25rem;
+        max-width: 6.25rem;
 
         &-item{
-            width: 100px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
     &__info {
+        display: flex;
+        flex-direction: column;
+        margin-left: $mobile-spacing-between-components;
+        justify-content: space-between;
+        width: 60%;
 
+        &-title {
+            @include body-copy;
+            font-weight: 600;
+
+            @include tablet {
+                font-weight: 600;
+            }
+        }
+
+        &-channel {
+            @include body-copy;
+        }
     }
 }
