@@ -1,6 +1,9 @@
 import "./Header.scss";
 import logo from "../../assets/images/logo/BrainFlix-logo.svg"
-import profile from "../../assets/images/Mohan-muruge.jpg"
+import ProfilePic from "../ProfilePic/ProfilePic";
+import profile from "../../assets/images/Mohan-muruge.jpg";
+import upload from "../../assets/images/icons/upload.svg"
+import Button from "../Button/Button";
 
 const Header = () => {
     return (
@@ -10,10 +13,9 @@ const Header = () => {
                 <form className="nav__form" >
                     <div className="nav__form-search">
                         <input type="search" className="nav__form-search-box" placeholder="Search" />
-                        <div className="nav__form-search-profile"></div>
-                        <button className="nav__form-button btn" type="submit" >UPLOAD</button>
+                        <ProfilePic />
+                        <Button text={"UPLOAD"} action={upload} />
                     </div>
-                    
                 </form>
             </header>
         </>

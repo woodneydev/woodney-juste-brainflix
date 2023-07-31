@@ -1,0 +1,71 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/mixins" as *;
+
+.comments-section {
+
+  &__length {
+    @include body-copy(false, false, true);
+  }
+
+  .add-comments {
+    display: flex;
+
+    &__form {
+      margin-left: $mobile-spacing-between-components;
+      width: 100%;
+
+        &-title {
+          @include section-header;
+          color: $primary-color-3;
+        }
+
+        &-textarea {
+          width: 100%;
+        }
+
+        .btn {
+          width: 100%;
+        }
+    }
+  }
+
+  .comment {
+      display: flex;
+      padding: 1rem 0; //
+      border-top: .125rem solid grey; //
+      margin-top: 16px; //
+      margin-bottom: 16px; //
+  
+      &:last-child {
+        border-bottom: .125rem solid grey; //
+        margin-bottom: 2.25rem;
+      }
+  
+      &__img {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: grey; //
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-right: 1rem; //
+      }
+  
+      &__details {
+        width: 100%;
+        &-header {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: .3125rem;
+  
+          &-name {
+            font-weight: bold;
+            color: black; //
+          }
+  
+          &-date {
+            color: darkgrey; //
+          }
+        }
+      }
+    }
+}

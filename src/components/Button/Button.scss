@@ -1,0 +1,29 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.btn {
+
+    @include labels-buttons;
+    background-color: $primary-color-2;
+    color: $primary-color-4;
+    border-radius: .3125rem;
+    border: none;
+    font-weight: 600;
+    min-width: 150px;
+    height: 40px;
+    margin: $mobile-spacing-between-components 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        @include tablet {
+            font-weight: 600;
+        }
+
+    &__img {
+        position: absolute;
+        left: .625rem;
+    }
+}

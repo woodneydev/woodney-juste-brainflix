@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "./variables"as *;
 
 // Media Queries
 @mixin tablet {
@@ -13,63 +13,147 @@
     }
 }
 
+// Spacing
+
+@mixin header-spacing-mobile-top-bottom {
+    margin-top: $mobile-spacing-before-headlines;
+    margin-bottom: $mobile-spacing-after-headlines;
+}
+
+@mixin header-spacing-mobile-left-right {
+    margin-left: $mobile-spacing-between-components;
+    margin-right: $mobile-spacing-between-components;
+}
+
+@mixin header-spacing-top-bottom {
+    margin-top: $spacing-before-headlines;
+    margin-bottom: $spacing-after-headlines;
+}
+
+@mixin header-spacing-left-right {
+    margin-left: $spacing-between-components;
+    margin-right: $spacing-between-components;
+}
+
 // Font-Styling
-@mixin mobile-page-header {
+@mixin page-header ($add-spacing-tb: false, $add-spacing-lr: false) {
     font-size: $mobile-header-font;
-    line-height: 2rem; 
-    font-weight: 700; 
+    line-height: 2rem;
+    font-weight: 700;
+
+    @if $add-spacing-tb {
+        @include header-spacing-mobile-top-bottom;
+    }
+    @if $add-spacing-lr {
+        @include header-spacing-mobile-left-right;
+    }
+
+    @include tablet {
+        font-size: $page-header-font;
+        line-height: 2.75rem;
+        font-weight: 700;
+
+        @if $add-spacing-tb {
+            @include header-spacing-top-bottom;
+        }
+
+        @if $add-spacing-lr {
+            @include header-spacing-left-right;
+        }
+
+    }
 }
 
-@mixin mobile-section-header {
+@mixin section-header ($add-spacing-tb: false, $add-spacing-lr: false) {
     font-size: $mobile-section-header-font;
-    line-height: 1.25rem; 
-    font-weight: 700; 
+    line-height: 1.25rem;
+    font-weight: 700;
+
+    @if $add-spacing-tb {
+        @include header-spacing-mobile-top-bottom;
+    }
+    @if $add-spacing-lr {
+        @include header-spacing-mobile-left-right;
+    }
+
+    @include tablet {
+        font-size: $section-header-font;
+        line-height: 1.25rem;
+        font-weight: 700;
+
+        @if $add-spacing-tb {
+            @include header-spacing-top-bottom;
+        }
+
+        @if $add-spacing-lr {
+            @include header-spacing-left-right;
+        }
+    }
 }
 
-@mixin mobile-subheader {
+@mixin subheader ($add-spacing-tb: false, $add-spacing-lr: false) {
     font-size: $mobile-subheader-font;
     line-height: 1.125rem;
     font-weight: 700;
+
+    @if $add-spacing-tb {
+        @include header-spacing-mobile-top-bottom;
+    }
+    @if $add-spacing-lr {
+        @include header-spacing-mobile-left-right;
+    }
+
+    @include tablet {
+        font-size: $subheader-font;
+        line-height: 1.375rem;
+        font-weight: 700;
+
+        @if $add-spacing-tb {
+            @include header-spacing-top-bottom;
+        }
+
+        @if $add-spacing-lr {
+            @include header-spacing-left-right;
+        }
+    }
 }
 
-@mixin mobile-body-copy {
+@mixin body-copy ($spacing-top: false, $spacing-right: false, $spacing-bottom: false, $spacing-left: false) {
     font-size: $mobile-body-copy-font;
     line-height: 1.125rem;
     font-weight: 400;
-}
 
-@mixin mobile-labels-buttons {
-    font-size: $mobile-labels-buttons-font;
-    line-height: .625rem;
-    font-weight: 700;
-}
+    @if $spacing-top {
+        margin-top: $mobile-spacing-between-components;
+    }
 
-@mixin page-header {
-    font-size: $page-header-font;
-    line-height: 2.75rem;
-    font-weight: 700;
-}
+    @if $spacing-right {
+        margin-right: $mobile-spacing-between-components;
+    }
 
-@mixin section-header {
-    font-size: $section-header-font;
-    line-height: 1.25rem;
-    font-weight: 700;
-}
+    @if $spacing-bottom {
+        margin-bottom: $mobile-spacing-between-components;
+    }
 
-@mixin subheader {
-    font-size: $subheader-font;
-    line-height: 1.375rem;
-    font-weight: 700;
-}
+    @if $spacing-left {
+        margin-left: $mobile-spacing-between-components;
+    }
 
-@mixin body-copy {
-    font-size: $body-copy-font;
-    line-height: 1.375rem;
-    font-weight: 400;
+    @include tablet {
+        font-size: $body-copy-font;
+        line-height: 1.375rem;
+        font-weight: 400;
+    }
 }
 
 @mixin labels-buttons {
-    font-size: $labels-buttons-font;
-    line-height: 1.25rem;
+    font-size: $mobile-labels-buttons-font;
+    line-height: .625rem;
     font-weight: 700;
+
+    @include tablet {
+        font-size: $labels-buttons-font;
+        line-height: 1.25rem;
+        font-weight: 700;
+    }
 }

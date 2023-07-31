@@ -2,12 +2,11 @@ import logo from './logo.svg';
 import './App.scss';
 import Header from './components/Header/Header';
 import { useState } from 'react';
-import videoDetails from "./assets/data/video-details.json";
-import videos from "./assets/data/videos.json";
+import videoDetails from "./assets/data/video-details.json"; 
+import videos from "./assets/data/videos.json"; 
 import VideoSection from './components/VideoSection/VideoSection';
 
 function App() {
-
     const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
 
     const handleNextVideo = nextVideo => {

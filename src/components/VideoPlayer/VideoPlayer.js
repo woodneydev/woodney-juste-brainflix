@@ -1,4 +1,5 @@
 import "./VideoPlayer.scss";
+import playButton from "../../assets/images/icons/play.svg"
 
 const VideoPlayer = ({currentVideo}) => {
     // console.log("video current", currentVideo)
