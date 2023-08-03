@@ -4,6 +4,8 @@ const NextVideos = ({filteredVideos, handleNextVideo}) => {
     
     const elements = filteredVideos.map(video => {
         return (
+            <>
+            <h2></h2>
             <div className="next-video" onClick={()=> {handleNextVideo(video)}}>
                 <div className="next-video__img">
                     <img className="next-video__img-item" src={video.image} />
@@ -13,6 +15,7 @@ const NextVideos = ({filteredVideos, handleNextVideo}) => {
                     <p className="next-video__info-channel">{video.channel}</p>
                 </div>
             </div>
+            </>
         )
     })
     

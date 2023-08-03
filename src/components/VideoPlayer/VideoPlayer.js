@@ -5,7 +5,7 @@ const VideoPlayer = ({currentVideo}) => {
     // console.log("video current", currentVideo)
     return (
         <>
-            <video className="video__player" src={currentVideo.video} poster={currentVideo.image}>
+            <video className="video__player" controls src={currentVideo.video} poster={currentVideo.image}>
             </video>
         </>
     )
