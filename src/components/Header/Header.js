@@ -4,12 +4,13 @@ import ProfilePic from "../ProfilePic/ProfilePic";
 import profile from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/icons/upload.svg"
 import Button from "../Button/Button";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     return (
         <>
             <header className="nav">
-                <img className="nav__img" src={logo} alt="logo" />
+                <NavLink to="/"><img className="nav__img" src={logo} alt="logo" /></NavLink>
                 <form className="nav__form" >
                     <div className="nav__form-search">
                         <input type="search" className="nav__form-search-box" placeholder="Search" />
