@@ -7,6 +7,8 @@ import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+    //look into dynamic paths for header
+
     return (
         <>
             <header className="nav">

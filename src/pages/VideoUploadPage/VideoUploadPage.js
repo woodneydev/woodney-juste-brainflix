@@ -2,8 +2,6 @@ import UploadVideo from "../../components/UploadVideo/UploadVideo";
 
 const VideoUploadPage = () => {
 
-
-
     return (
         <>
             <UploadVideo />

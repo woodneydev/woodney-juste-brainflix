@@ -9,7 +9,7 @@ const VideoSection = ({currentVideo, filteredVideos, handleNextVideo}) => {
         <>
             <main className="video">
                     <section className="video__current-playing">
-                      <VideoPlayer currentVideo={currentVideo} />  
+                      <VideoPlayer currentVideo={currentVideo} /> 
                     </section>   
 
                 <article className="video__current">
