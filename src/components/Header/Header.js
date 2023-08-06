@@ -4,10 +4,14 @@ import ProfilePic from "../ProfilePic/ProfilePic";
 import profile from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/icons/upload.svg"
 import Button from "../Button/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
-    //look into dynamic paths for header
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate("/upload")
+    }
 
     return (
         <>
@@ -17,7 +21,7 @@ const Header = () => {
                     <div className="nav__form-search">
                         <input type="search" className="nav__form-search-box" placeholder="Search" />
                         <ProfilePic />
-                        <Button text={"UPLOAD"} action={upload} />
+                        <Button handleClick={handleButtonClick} text={"UPLOAD"} action={upload} />
                     </div>
                 </form>
             </header>
