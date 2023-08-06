@@ -1,7 +1,6 @@
 import "./Header.scss";
 import logo from "../../assets/images/logo/BrainFlix-logo.svg"
 import ProfilePic from "../ProfilePic/ProfilePic";
-import profile from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/icons/upload.svg"
 import Button from "../Button/Button";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -16,12 +15,12 @@ const Header = () => {
     return (
         <>
             <header className="nav">
-                <NavLink to="/"><img className="nav__img" src={logo} alt="logo" /></NavLink>
+                <NavLink className="nav__img" to="/"><img className="nav__img-item" src={logo} alt="website logo" /></NavLink>
                 <form className="nav__form" >
                     <div className="nav__form-search">
                         <input type="search" className="nav__form-search-box" placeholder="Search" />
                         <ProfilePic />
-                        <Button handleClick={handleButtonClick} text={"UPLOAD"} action={upload} />
+                        <Button handleButtonClick={handleButtonClick} text={"UPLOAD"} action={upload} />
                     </div>
                 </form>
             </header>

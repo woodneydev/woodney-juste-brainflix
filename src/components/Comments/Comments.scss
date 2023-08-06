@@ -5,6 +5,11 @@
 
   &__length {
     @include body-copy(false, false, true);
+    font-weight: bold;
+
+    @include tablet {
+      font-weight: bold;
+    }
   }
 
   .add-comments {
@@ -68,7 +73,7 @@
           padding-bottom: .3125rem;
   
           &-name {
-            font-weight: bold;
+            font-weight: 600;
             color: $secondary-color-1; //
           }
   

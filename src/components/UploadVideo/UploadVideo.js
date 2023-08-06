@@ -1,7 +1,14 @@
 import Button from "../Button/Button";
 import upload from "../../assets/images/icons/upload.svg";
+import { useNavigate } from "react-router-dom";
 
 const UploadVideo = () => { 
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        alert("Upload Successful")
+        navigate("/");
+    }
 
     return (
         <div>
@@ -18,7 +25,7 @@ const UploadVideo = () => {
                     <textarea placeholder="add a description to your video"></textarea>
                 </label>
                 
-                <Button action={upload} src="" />
+                <Button action={upload} handleButtonClick={handleButtonClick} />
             </form>
         </div>
     )

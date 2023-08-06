@@ -1,11 +1,10 @@
 import "./VideoPlayer.scss";
-import playButton from "../../assets/images/icons/play.svg"
 
-const VideoPlayer = ({currentVideo}) => {
-    // console.log("video current", currentVideo)
+const VideoPlayer = ({currentVideo, apiKey}) => {
+    const url = "?api_key="
     return (
         <>
-            <video className="video__player" controls src={currentVideo.video} poster={currentVideo.image}>
+            <video className="video__player" controls src={currentVideo.video + url + apiKey} poster={currentVideo.image}>
             </video>
         </>
     )

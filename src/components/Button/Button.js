@@ -1,10 +1,10 @@
 import "./Button.scss";
 
-const Button = ({text, action, handleClick}) => {
+const Button = ({text, action, handleButtonClick}) => {
 
-    if (handleClick) {
+    if (handleButtonClick) {
         return (
-            <button className="btn" onClick={handleClick} type="submit" ><img className="btn__img" src={action} alt="Action Icon" />{text}</button>
+            <button className="btn" onClick={handleButtonClick} type="submit" ><img className="btn__img" src={action} alt="Action Icon" />{text}</button>
         )
     }
 

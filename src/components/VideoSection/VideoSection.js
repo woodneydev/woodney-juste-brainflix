@@ -6,7 +6,7 @@ import Comments from "../Comments/Comments";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const VideoSection = ({filteredVideos, displayVideoId, handleNextVideo, apikey, videos}) => {
+const VideoSection = ({filteredVideos, displayVideoId, handleNextVideo, apiKey, videos}) => {
         const baseUrl = `https://project-2-api.herokuapp.com/videos/${displayVideoId}?api_key=`;
 
         const [currentVideo, setCurrentVideo] = useState(null);
@@ -14,12 +14,12 @@ const VideoSection = ({filteredVideos, displayVideoId, handleNextVideo, apikey, 
         useEffect(() => {
 
             if (displayVideoId === null) return;
-            axios.get(baseUrl + apikey)
+            axios.get(baseUrl + apiKey)
                 .then(({data}) => {
                     setCurrentVideo(data)
                 })
                 .catch(error => {
-                    console.log(error)
+                    alert("An error occured, please try again later");
                 })
         }, [displayVideoId])
 
@@ -28,10 +28,9 @@ const VideoSection = ({filteredVideos, displayVideoId, handleNextVideo, apikey, 
         }
 
         return (
-        <>
             <main className="video">
                     <section className="video__current-playing">
-                      <VideoPlayer currentVideo={currentVideo} /> 
+                      <VideoPlayer currentVideo={currentVideo} apiKey={apiKey} /> 
                     </section>   
 
                 <article className="video__current">
@@ -44,7 +43,6 @@ const VideoSection = ({filteredVideos, displayVideoId, handleNextVideo, apikey, 
                     </section>
                 </article>
             </main>
-        </>
     )
 
 }

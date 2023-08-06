@@ -4,6 +4,8 @@
 .next-video {
     display: flex;
     margin-bottom: $mobile-spacing-between-components;
+    text-decoration: none;
+    color: $secondary-color-1;
 
 
     &__img {
