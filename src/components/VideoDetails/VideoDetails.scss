@@ -5,13 +5,23 @@
 
     &-title {
         @include page-header(true);
+
+        @include desktop {
+            margin-bottom: 0;
+        }
     }
 
     .video-stats {
         display: flex;
         flex-wrap: wrap;
-        border-top: 1px solid $secondary-color-3;
-        border-bottom: 1px solid $secondary-color-3;
+        border-top: .0625rem solid $secondary-color-3;
+        border-bottom: .0625rem solid $secondary-color-3;
+
+        @include tablet {
+            flex-wrap: nowrap;
+            align-items: baseline;
+            border-top: none;
+        }
 
         &__channel {
             width: 50%;
@@ -20,12 +30,21 @@
 
             @include tablet {
                 font-weight: bold;
+                white-space: nowrap;
+                width: auto;
+                margin-right: $spacing-between-components;
             }
         }
 
         &__views {
             display: flex;
             width: 50%;
+
+            @include tablet {
+                align-items: baseline;
+                width: auto;
+                margin-right: 1rem;
+            }
 
             &-img{
                 height: $mobile-body-copy-font;
@@ -45,12 +64,27 @@
             color: $primary-color-3;
             @include body-copy(false, false, true, false);
 
+            @include tablet {
+                width: auto;
+                margin-left: auto;
+                margin-right: $spacing-between-components;
+            }
+
         }
 
         &__likes {
             display: flex;
             width: 50%;
             color: $primary-color-3;
+
+            @include tablet {
+                align-items: baseline;
+                width: auto;
+            }
+            
+            @include desktop {
+                margin-right: $mobile-spacing-between-components;
+            }
 
             &-img {
                 height: $mobile-body-copy-font;
@@ -65,6 +99,10 @@
 
     &-description {
         color: $secondary-color-1;
-        @include body-copy(true, false, true)
+        @include body-copy(true, false, true);
+
+        @include desktop {
+            margin-right: $spacing-between-components;
+        }
     }
 }

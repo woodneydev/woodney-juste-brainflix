@@ -1,0 +1,55 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+    // margin-left: $mobile-spacing-between-components;
+    // margin-right: $mobile-spacing-between-components;
+
+    &__title {
+        @include page-header(true);
+        font-weight: 600;
+        margin-top: 0;
+        padding-top: 1.5rem;
+        border-top: .0625rem solid $primary-color-3;
+        
+        @include tablet {
+            font-weight: 600;
+        }
+    }
+
+    &__form {
+
+        &-img-item {
+            width: 100%;
+            border-radius: .25rem;
+        }
+
+        .inputs {
+            
+            &__label {
+                display: flex;
+                flex-direction: column;
+                margin-top: $mobile-spacing-between-components;
+                @include section-header;
+                color: $primary-color-3;
+
+                &-input {
+                    background-color: $secondary-color-4;
+                    border: 2px solid $secondary-color-3;
+                    border-radius: .3125rem;
+                    padding-left: 1rem;
+                   
+
+                    &--title-box {
+                        height: 2.5rem;
+                        padding-top: .3125rem;
+                    }
+
+                    &--textarea {
+                        padding-top: .625rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,10 @@ import addCommentIcon from "../../assets/images/icons/add_comment.svg";
 
 const Comments = ({ comments }) => {
   const elements = comments.map((comment) => {
+    let date = new Date(comment.timestamp)
+    const month = `${date.getMonth() + 1}`.length === 1 ? 0 + `${date.getMonth() + 1}` : date.getMonth() + 1
+    date = `${month}/${date.getDate()}/${date.getFullYear()}`
+
     return (
       <div className="comment" key={comment.id} >
         <div className="comment__img"></div>
@@ -12,7 +16,7 @@ const Comments = ({ comments }) => {
           <div className="comment__details-header">
             <p className="comment__details-header-name">{comment.name}</p>
             <p className="comment__details-header-date">
-              {comment.timestamp}
+              {date}
             </p>
           </div>
           <p className="comment__details-post">{comment.comment}</p>

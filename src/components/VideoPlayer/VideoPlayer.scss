@@ -1,9 +1,28 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles//partials/mixins" as *;
 
-.video__player {
-    width: 100%;
-    aspect-ratio: 16/9;
+.current-video {
     background-color: $secondary-color-1;
+    height: auto;
+    overflow: hidden;
 
+    @include tablet {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__player {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: $secondary-color-1;
+        
+        @include tablet {
+            width: 90%;
+            height: 100%;
+        }
+
+        @include desktop {
+            width: 65%;
+        }
+    }
 }

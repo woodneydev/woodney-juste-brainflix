@@ -1,7 +1,7 @@
 import "./NextVideos.scss"
 import { NavLink } from "react-router-dom";
 
-const NextVideos = ({filteredVideos, handleNextVideo}) => {
+const NextVideos = ({filteredVideos}) => {
     
     const elements = filteredVideos.map(video => {
         return (
@@ -19,7 +19,8 @@ const NextVideos = ({filteredVideos, handleNextVideo}) => {
     })
     
     return (
-        <>
+        <>  
+            <h2 className="next-video__title">NEXT VIDEOS</h2>
             {elements}
         </>
     )

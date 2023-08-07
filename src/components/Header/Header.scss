@@ -40,7 +40,7 @@
         }
 
         @include desktop{
-            
+            width: 50%;
         }
 
         &-search {
@@ -91,6 +91,10 @@
 
                 @include tablet {
                     width: 30%;
+                }
+
+                @include desktop {
+                    width: 20%;
                 }
             }
         }

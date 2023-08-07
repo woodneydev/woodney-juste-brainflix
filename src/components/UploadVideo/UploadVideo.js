@@ -1,6 +1,8 @@
 import Button from "../Button/Button";
-import upload from "../../assets/images/icons/upload.svg";
+import publish from "../../assets/images/icons/publish.svg";
 import { useNavigate } from "react-router-dom";
+import uploadImg from "../../assets/images/Upload-video-preview.jpg"
+import "./UploadVideo.scss";
 
 const UploadVideo = () => { 
     const navigate = useNavigate();
@@ -11,21 +13,26 @@ const UploadVideo = () => {
     }
 
     return (
-        <div>
-            <h1>Upload Video</h1>
-            <img />
-            <form>
-                <label>
-                    TITLE YOUR VIDEO
-                    <input placeholder="Add a title to your video" />   
-                </label>
+        <div className="upload">
+            <h1 className="upload__title">Upload Video</h1>
+            <form className="upload__form">
+                <div>
+                    <img className="upload__form-img-item" src={uploadImg} />
+
+                </div>
+                <div className="inputs">
+                    <label className="inputs__label">
+                        TITLE YOUR VIDEO
+                        <input className="inputs__label-input inputs__label-input--title-box" placeholder="Add a title to your video" />   
+                    </label>
+                    
+                    <label className="inputs__label">
+                        ADD A VIDEO DESCRIPTION
+                        <textarea className="inputs__label-input inputs__label-input--textarea" placeholder="add a description to your video"></textarea>
+                    </label>
+                </div>
                 
-                <label>
-                    ADD A VIDEO DESCRIPTION
-                    <textarea placeholder="add a description to your video"></textarea>
-                </label>
-                
-                <Button action={upload} handleButtonClick={handleButtonClick} />
+                <Button action={publish} text={"PUBLISH"} handleButtonClick={handleButtonClick} />
             </form>
         </div>
     )

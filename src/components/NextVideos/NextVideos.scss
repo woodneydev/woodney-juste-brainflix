@@ -7,6 +7,14 @@
     text-decoration: none;
     color: $secondary-color-1;
 
+    @include tablet {
+        min-width: 20rem;
+    }
+
+    &__title {
+        @include section-header(true);
+        color: $primary-color-3;
+    }
 
     &__img {
         flex: 1;
@@ -32,6 +40,7 @@
         &-title {
             @include body-copy;
             font-weight: 600;
+            max-width: 10.625rem;
 
             @include tablet {
                 font-weight: 600;

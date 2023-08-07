@@ -17,6 +17,11 @@
 
     @include tablet {
       align-items: flex-end;
+      margin-bottom: $spacing-between-components;
+    }
+
+    @include desktop {
+      margin-right: $mobile-spacing-between-components;
     }
     
     .profile-pic  {
@@ -26,11 +31,6 @@
     &__form {
       margin-left: $mobile-spacing-between-components;
       width: 100%;
-
-        @include tablet {
-          // display: flex;
-          // flex-direction: column;
-        }
 
         &-title {
           @include section-header;
@@ -48,9 +48,9 @@
             height: 120px;
             background-color: $secondary-color-4;
             border: 2px solid $secondary-color-3;
-            border-radius: 5px;
+            border-radius: .3125rem;
             padding-left: 1rem;
-            padding-top: 10px;
+            padding-top: .625rem;
             resize: none;
 
             &::placeholder {
@@ -88,6 +88,11 @@
       &:last-child {
         border-bottom: .125rem solid $secondary-color-3;
         margin-bottom: $mobile-spacing-between-components;
+
+        @include desktop {
+          border-bottom: none;
+          margin-bottom: 5rem;
+        }
       }
   
       &__img {
@@ -96,7 +101,7 @@
         background-color: $secondary-color-3;
         border-radius: 50%;
         flex-shrink: 0;
-        margin-right: $mobile-spacing-between-components; //
+        margin-right: $mobile-spacing-between-components;
       }
   
       &__details {
@@ -109,17 +114,25 @@
   
           &-name {
             font-weight: 600;
-            color: $secondary-color-1; //
+            color: $secondary-color-1; 
           }
   
           &-date {
-            color: $primary-color-3; //
+            color: $primary-color-3;
+
+            @include desktop {
+              margin-right: 1rem;
+            }
           }
         }
 
         &-post {
           @include body-copy;
           color: $primary-color-1;
+
+          @include desktop {
+            margin-right: $spacing-between-components;
+          }
         }
       }
     }
