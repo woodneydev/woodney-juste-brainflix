@@ -67,7 +67,7 @@
 @mixin section-header ($add-spacing-tb: false, $add-spacing-lr: false) {
     font-size: $mobile-section-header-font;
     line-height: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
 
     @if $add-spacing-tb {
         @include header-spacing-mobile-top-bottom;
@@ -79,7 +79,7 @@
     @include tablet {
         font-size: $section-header-font;
         line-height: 1.25rem;
-        font-weight: 700;
+        font-weight: 600;
 
         @if $add-spacing-tb {
             @include header-spacing-top-bottom;

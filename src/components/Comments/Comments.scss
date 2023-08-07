@@ -14,6 +14,10 @@
 
   .add-comments {
     display: flex;
+
+    @include tablet {
+      align-items: flex-end;
+    }
     
     .profile-pic  {
       margin-top: $body-copy-font;
@@ -23,23 +27,54 @@
       margin-left: $mobile-spacing-between-components;
       width: 100%;
 
+        @include tablet {
+          // display: flex;
+          // flex-direction: column;
+        }
+
         &-title {
           @include section-header;
           color: $primary-color-3;
         }
 
-        &-textarea {
-          width: 100%;
-          height: 120px;
-          background-color: $secondary-color-4;
-          border: 2px solid $secondary-color-3;
-          border-radius: 5px;
+        &-section {
+
+          @include tablet {
+            display: flex;
+          }
+
+          &-textarea {
+            width: 100%;
+            height: 120px;
+            background-color: $secondary-color-4;
+            border: 2px solid $secondary-color-3;
+            border-radius: 5px;
+            padding-left: 1rem;
+            padding-top: 10px;
+            resize: none;
+
+            &::placeholder {
+              color: $secondary-color-1;
+            }
+
+            @include tablet {
+              height: 2.5rem;
+            }
+            
+          }
+  
+          .btn {
+            width: 100%;
+            margin-bottom: 0;
+
+            @include tablet {
+              width: 9.375rem;
+              margin-top: 0;
+              margin-left: $mobile-spacing-between-components;
+            }
+          }
         }
 
-        .btn {
-          width: 100%;
-          margin-bottom: 0;
-        }
     }
   }
 

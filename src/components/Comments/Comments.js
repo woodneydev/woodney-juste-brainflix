@@ -28,8 +28,10 @@ const Comments = ({ comments }) => {
         <ProfilePic />
         <form className="add-comments__form">
           <h2 className="add-comments__form-title">JOIN THE CONVERSATION</h2>
-          <textarea className="add-comments__form-textarea" placeholder="Add a new comment"></textarea>
-          <Button text={"COMMENT"} action={addCommentIcon} />
+          <div className="add-comments__form-section" >
+            <textarea className="add-comments__form-section-textarea" placeholder="Add a new comment"></textarea>
+            <Button text={"COMMENT"} action={addCommentIcon} />
+          </div>
         </form>
       </div>
       {elements}
