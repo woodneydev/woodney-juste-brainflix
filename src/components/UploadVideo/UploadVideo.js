@@ -16,7 +16,7 @@ const UploadVideo = () => {
         <div className="upload">
             <h1 className="upload__title">Upload Video</h1>
             <form className="upload__form">
-                <div>
+                <div className="upload__form-img">
                     <img className="upload__form-img-item" src={uploadImg} />
 
                 </div>
@@ -28,11 +28,13 @@ const UploadVideo = () => {
                     
                     <label className="inputs__label">
                         ADD A VIDEO DESCRIPTION
-                        <textarea className="inputs__label-input inputs__label-input--textarea" placeholder="add a description to your video"></textarea>
+                        <textarea className="inputs__label-input inputs__label-input--textarea" placeholder="Add a description to your video"></textarea>
                     </label>
                 </div>
-                
-                <Button action={publish} text={"PUBLISH"} handleButtonClick={handleButtonClick} />
+                <div className="btn-wrapper">
+                    <Button action={publish} text={"PUBLISH"} handleButtonClick={handleButtonClick} />
+                    <button className="cancel-btn">CANCEL</button>
+                </div>
             </form>
         </div>
     )
