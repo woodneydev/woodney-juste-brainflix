@@ -7,24 +7,23 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const VideoSection = ({filteredVideos, displayVideoId, handleNextVideo, apiKey, videos}) => {
-        const baseUrl = `https://project-2-api.herokuapp.com/videos/${displayVideoId}?api_key=`;
-
+        const videoEndPoint = `http://localhost:8080/videos/${displayVideoId}`;
         const [currentVideo, setCurrentVideo] = useState(null);
-
+        
         useEffect(() => {
 
             if (displayVideoId === null) return;
-            axios.get(baseUrl + apiKey)
+            axios.get(videoEndPoint)
                 .then(({data}) => {
                     setCurrentVideo(data)
                 })
                 .catch(error => {
                     alert("An error occured, please try again later");
                 })
-        }, [displayVideoId])
+        }, [displayVideoId, videoEndPoint])
 
         if (!currentVideo) {
-            return <h1>Loading</h1>
+            return <div className="loading">Loading...</div>
         }
 
         return (

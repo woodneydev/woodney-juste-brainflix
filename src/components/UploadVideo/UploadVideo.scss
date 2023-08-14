@@ -1,6 +1,12 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.seperate {
+    background-color: $primary-color-3;
+    border: 0;
+    height: .0625rem;
+}
+
 .upload {
     margin-left: $mobile-spacing-between-components;
     margin-right: $mobile-spacing-between-components;
@@ -15,9 +21,7 @@
         font-weight: 600;
         margin-top: 0;
         padding-top: 1.5rem;
-        border-top: .0625rem solid $primary-color-3;
-      
-        
+
         @include tablet {
             font-weight: 600;
             margin-top: 0;
@@ -30,10 +34,24 @@
     &__form {
 
         @include desktop {
-            
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-right: 0;
         }
 
         &-img {
+
+            @include desktop {
+                width: 25%;
+                margin-right: $spacing-between-components;
+            }
+
+            &-description {
+                @include section-header;
+                color: $primary-color-3;
+            }
+
             &-item {
                 width: 100%;
                 border-radius: .25rem;
@@ -41,10 +59,18 @@
                 @include tablet {
                     width: 50%;
                 }
+
+                @include desktop {
+                    width: 100%;
+                }
             }
         }
 
         .inputs {
+
+            @include desktop {
+                width: 72%;
+            }
             
             &__label {
                 display: flex;
@@ -82,18 +108,32 @@
         }
 
         .btn-wrapper {
+            display: flex;
+            flex-direction: column;
+
             @include tablet {
-                display: flex;
+                flex-direction: row;
                 justify-content: flex-end;
                 border-top: .0625rem solid $primary-color-3;
 ;
             }
 
+            @include desktop {
+                margin-top: $spacing-between-components;
+                width: 100%;
+            }
+
             .btn {
                 width: 100%;
+                order: -1;
 
                 @include tablet {
+                    order: 1;
                     width: 20%;
+                }
+                @include desktop {
+                    width: 10%;
+                    margin-left: $spacing-between-components
                 }
             }
     
@@ -115,6 +155,10 @@
                     @include tablet {
                         font-weight: 600;
                         width: 20%;
+                    }
+
+                    @include desktop {
+                        width: 10%;
                     }
             
                 &:hover {

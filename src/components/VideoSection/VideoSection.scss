@@ -21,6 +21,7 @@
             @include desktop {
                 border-right: .0625rem solid $secondary-color-3;
                 margin-left: 0;
+                min-width: 65%;
             }
         }
 

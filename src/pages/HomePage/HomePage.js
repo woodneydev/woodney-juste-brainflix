@@ -6,8 +6,8 @@ import axios from "axios";
 import {useParams} from "react-router-dom";
 
 function HomePage() {
-    const baseUrl = "https://project-2-api.herokuapp.com/videos?api_key=";
-
+    const videosEndPoint = "http://localhost:8080/videos";
+    
     let { videoId } = useParams();
     const [videos, setVideos] = useState([]);
     const [displayVideoId, setDisplayVideoId] = useState(null);
@@ -25,7 +25,7 @@ function HomePage() {
     }, [videos, videoId])
 
     useEffect(() => {
-      axios.get(baseUrl + apiKey)
+      axios.get(videosEndPoint)
         .then(({data}) => {
           setVideos(data);
         })
